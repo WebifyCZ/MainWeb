@@ -181,7 +181,7 @@ form.addEventListener("submit", (e) => {
 
 const FORM_ENDPOINT = "https://api.web3forms.com/submit";
 const ACCESS_KEY = "a4187bdd-0956-4526-80cc-28d48bf734e4";
-const MAIL = "webify@seznam.cz";
+const MAIL = "davidmraz@webifycz.eu";
 
 function mailFallback(data) {
   const body = encodeURIComponent(`${data.message}\n\n${data.name} (${data.email})`);
@@ -249,7 +249,7 @@ function reveal(els) {
     revealer.observe(el);
   });
 }
-reveal($$(".head, .demo, .stats div, .skills article, .big, .steps li, .contact form, .mail"));
+reveal($$(".head, .demo, .stats div, .services li, .skills article, .big, .steps li, .contact form, .mail"));
 
 if (!calm) {
   const counter = new IntersectionObserver((entries, obs) => {
@@ -281,6 +281,21 @@ addEventListener("scroll", () => {
   if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
 }, { passive: true });
 onScroll();
+
+const reviewsWidget = $("[data-featurable-async]");
+if (reviewsWidget) {
+  const watcher = new MutationObserver(() => {
+    if (/failed to load/i.test(reviewsWidget.textContent)) {
+      watcher.disconnect();
+      reviewsWidget.innerHTML = "";
+      const note = document.createElement("p");
+      note.className = "empty-note";
+      note.textContent = "Recenze se teď nepodařilo načíst. Můžete být první, kdo napíše novou.";
+      reviewsWidget.append(note);
+    }
+  });
+  watcher.observe(reviewsWidget, { childList: true, subtree: true, characterData: true });
+}
 
 $("#year").textContent = new Date().getFullYear();
 initTheme();

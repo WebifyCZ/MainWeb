@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stránka nenalezena | WebifyCz</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script>
+    try {
+      var t = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="section" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:1.5rem">
+    <p class="mono">Chyba 404</p>
+    <h1>Tuhle stránku tu nemám.</h1>
+    <p class="lead">Odkaz je možná starý nebo se v něm někdo spletl. Vrať se na úvod, najdeš tam projekty i kontakt.</p>
+    <p class="actions"><a class="btn" href="/">Zpět na úvod</a></p>
+  </main>
+</body>
+</html>
