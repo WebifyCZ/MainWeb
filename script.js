@@ -47,7 +47,7 @@ navToggle.addEventListener("click", () => setNav(!nav.classList.contains("open")
 nav.addEventListener("click", (e) => { if (e.target.closest("a")) setNav(false); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") setNav(false); });
 
-const navLinks = $$(".nav a");
+const navLinks = $$(".nav a:not(.nav-cta)");
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -155,8 +155,16 @@ const form = $("#form");
 const rules = {
   name: (v) => (v.trim().length >= 2 ? "" : "Napište své jméno (alespoň 2 znaky)."),
   email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? "" : "Zadejte e-mail ve tvaru jmeno@domena.cz."),
-  msg: (v) => (v.trim().length >= 10 ? "" : "Zpráva musí mít alespoň 10 znaků."),
+  msg: (v) => (v.trim().length >= 10 ? "" : "Napište alespoň 10 znaků."),
+  phone: (v) => (!v.trim() || /^[+\d][\d\s()+-]{6,}$/.test(v.trim()) ? "" : "Telefon zadejte třeba ve tvaru +420 123 456 789, nebo pole nechte prázdné."),
 };
+
+$$(".services a[data-service]").forEach((a) => {
+  a.addEventListener("click", () => {
+    const chip = $$("input[name=service]").find((i) => i.value === a.dataset.service);
+    if (chip) chip.checked = true;
+  });
+});
 function validateField(input) {
   const message = rules[input.name](input.value);
   $("#" + input.id + "-err").textContent = message;
@@ -191,7 +199,9 @@ function mailFallback(data) {
 async function sendForm(ok) {
   const btn = $("button[type=submit]", form);
   const raw = Object.fromEntries(new FormData(form));
-  const data = { name: raw.name, email: raw.email, message: raw.msg };
+  const services = $$("input[name=service]:checked", form).map((i) => i.value);
+  const extra = [services.length ? "Zájem o: " + services.join(", ") : "", raw.phone ? "Telefon: " + raw.phone : ""].filter(Boolean).join("\n");
+  const data = { name: raw.name, email: raw.email, message: raw.msg + (extra ? "\n\n" + extra : "") };
   if (raw.botcheck) {
     ok.textContent = "Díky, zpráva je odeslaná.";
     return;
@@ -204,12 +214,12 @@ async function sendForm(ok) {
     const res = await fetch(FORM_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...data, access_key: ACCESS_KEY, subject: "Nová zpráva z webu WebifyCz od: " + data.name, from_name: "Web WebifyCz" }),
+      body: JSON.stringify({ ...data, access_key: ACCESS_KEY, subject: "Nová poptávka z webu WebifyCz od: " + data.name, from_name: "Web WebifyCz" }),
       signal: ctrl.signal,
     });
     const json = await res.json();
     if (!res.ok || !json.success) throw new Error(json.message || res.status);
-    ok.textContent = "Díky, zpráva je odeslaná. Ozvu se vám co nejdřív.";
+    ok.textContent = "Díky, poptávka je odeslaná. Ozvu se vám co nejdřív.";
     form.reset();
     fields.forEach((f) => f.setAttribute("aria-invalid", "false"));
   } catch (err) {
@@ -270,10 +280,13 @@ if (!calm) {
 }
 
 const up = $(".up");
+const stickyCta = $(".sticky-cta");
+const contactEl = $("#kontakt");
 let ticking = false;
 function onScroll() {
   const y = window.scrollY;
   up.classList.toggle("show", y > 900);
+  stickyCta.classList.toggle("show", y > 500 && contactEl.getBoundingClientRect().top > innerHeight * 0.6);
   if (!calm) document.documentElement.style.setProperty("--y", y);
   ticking = false;
 }

@@ -148,6 +148,60 @@
         "https://www.instagram.com/webifycz.eu/",
         "https://www.tiktok.com/@webifycz.eu.eu"
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://webifycz.eu/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kolik web stojí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cena závisí na rozsahu. Jedna stránka je jiná práce než e-shop s administrací. Po krátké poptávce vám navrhnu konkrétní řešení a cenu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak dlouho tvorba trvá?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Záleží na rozsahu a na tom, jak rychle dodáte podklady, třeba texty, fotografie a logo. Termín domluvíme na začátku."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co od vás potřebuji?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stačí popsat, co děláte a co má web přinést. S doménou a hostingem poradím."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Už web mám. Dá se předělat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Můžeme ho předělat celý, nebo opravit jen to, co vám nevyhovuje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pomůžete s webem i po spuštění?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Nabízím správu a údržbu: aktualizace, drobné úpravy a technickou podporu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je poptávka závazná?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. Poptávkou nic neobjednáváte, jen popíšete, co potřebujete."
+          }
+        }
+      ]
     }
   ]
 }
@@ -185,7 +239,8 @@
       <a href="#o-mne"><i>04</i>O mně</a>
       <a href="#recenze"><i>05</i>Recenze</a>
       <a href="#kontakt"><i>06</i>Kontakt</a>
-      <button class="theme-toggle" type="button" aria-label="Přepnout tmavý a světlý režim">Tmavý režim</button>
+      <a class="nav-cta" href="#kontakt">Poptávka</a>
+      <button class="theme-toggle" type="button">Tmavý režim</button>
     </nav>
   </header>
 
@@ -197,16 +252,16 @@
           <img class="hero-mark on-dark" src="mark-big-on-dark.png" alt="" width="96" height="65">
           <p class="mono">Webdesign a front-end vývoj</p>
           <h1>Weby pro malé firmy. Rychlé, čisté a na <mark>každém displeji.</mark></h1>
-          <p class="lead">Jsem David Mráz. Navrhnu a naprogramuju web od jedné stránky po e-shop s administrací. Bez šablon a bez zbytečných frameworků.</p>
+          <p class="lead">Jsem David Mráz. Navrhnu a naprogramuju web nebo e-shop na míru a postarám se i o SEO, sociální sítě a údržbu. Stačí poslat nezávaznou poptávku, ozvu se vám co nejdřív.</p>
           <p class="actions">
-            <a class="btn" href="#projekty">Prohlédnout projekty</a>
-            <a class="btn btn-ghost" href="#kontakt">Napsat zprávu</a>
+            <a class="btn" href="#kontakt">Nezávazná poptávka</a>
+            <a class="btn btn-ghost" href="#projekty">Prohlédnout projekty</a>
           </p>
         </div>
 
         <div class="demo" aria-labelledby="demo-title">
           <div class="demo-bar">
-            <p id="demo-title" class="mono">Vyzkoušej responzivitu</p>
+            <p id="demo-title" class="mono">Vyzkoušejte responzivitu</p>
             <div class="switch" role="group" aria-label="Velikost náhledu">
               <button type="button" data-size="desktop" aria-pressed="true">Počítač</button>
               <button type="button" data-size="tablet" aria-pressed="false">Tablet</button>
@@ -229,12 +284,12 @@
         <div><dd data-count="6">6</dd><dt>realizovaných webů</dt></div>
         <div><dd data-count="2">2</dd><dt>e-shopy</dt></div>
         <div><dd data-count="3">3</dd><dt>jazyky na jednom webu</dt></div>
-        <div><dd data-count="0">0</dd><dt>frameworků v kódu</dt></div>
+        <div><dd data-count="1">1</dd><dt>osoba, se kterou jednáte</dt></div>
       </dl>
     </section>
 
     <div class="marquee" aria-hidden="true">
-      <div class="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Figma</span><span>Git</span><span>GitHub</span><span>PHP</span><span>Shoptet</span><span>Netlify</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Figma</span><span>Git</span><span>GitHub</span><span>PHP</span><span>Shoptet</span><span>Netlify</span></div>
+      <div class="track"><span>Tvorba webů</span><span>Redesign</span><span>SEO</span><span>Sociální sítě</span><span>Online reklama</span><span>Správa webu</span><span>E-shopy</span><span>Tvorba webů</span><span>Redesign</span><span>SEO</span><span>Sociální sítě</span><span>Online reklama</span><span>Správa webu</span><span>E-shopy</span></div>
     </div>
 
     <section id="sluzby" class="section">
@@ -248,39 +303,48 @@
           <span class="no">01</span>
           <h3>Tvorba webových stránek</h3>
           <p>Weby a e-shopy na míru, od jedné stránky po e-shop s administrací.</p>
-          <a href="#kontakt">Poptat službu →</a>
+          <a href="#kontakt" data-service="Tvorba webových stránek">Poptat službu →</a>
         </li>
         <li>
           <span class="no">02</span>
           <h3>Redesign webových stránek</h3>
           <p>Proměníme zastaralý web v moderní, přehlednou a responzivní prezentaci.</p>
-          <a href="#kontakt">Poptat službu →</a>
+          <a href="#kontakt" data-service="Redesign webových stránek">Poptat službu →</a>
         </li>
         <li>
           <span class="no">03</span>
           <h3>SEO optimalizace</h3>
           <p>Pomůžeme vaší firmě být lépe vidět ve vyhledávačích, jako je Google.</p>
-          <a href="#kontakt">Poptat službu →</a>
+          <a href="#kontakt" data-service="SEO optimalizace">Poptat službu →</a>
         </li>
         <li>
           <span class="no">04</span>
           <h3>Správa sociálních sítí</h3>
           <p>Tvorba příspěvků, Reels a TikTok videí pro větší dosah a povědomí o značce.</p>
-          <a href="#kontakt">Poptat službu →</a>
+          <a href="#kontakt" data-service="Správa sociálních sítí">Poptat službu →</a>
         </li>
         <li>
           <span class="no">05</span>
           <h3>Online reklama</h3>
           <p>Pomůžeme s nastavením a správou reklamních kampaní na internetu.</p>
-          <a href="#kontakt">Poptat službu →</a>
+          <a href="#kontakt" data-service="Online reklama">Poptat službu →</a>
         </li>
         <li>
           <span class="no">06</span>
           <h3>Správa a údržba webu</h3>
           <p>Aktualizace, drobné úpravy, technická podpora a dlouhodobá péče o web.</p>
-          <a href="#kontakt">Poptat službu →</a>
+          <a href="#kontakt" data-service="Správa a údržba webu">Poptat službu →</a>
         </li>
       </ul>
+      <div class="faq">
+        <h3>Časté otázky</h3>
+        <details><summary>Kolik web stojí?</summary><p>Cena závisí na rozsahu. Jedna stránka je jiná práce než e-shop s administrací. Po krátké poptávce vám navrhnu konkrétní řešení a cenu.</p></details>
+        <details><summary>Jak dlouho tvorba trvá?</summary><p>Záleží na rozsahu a na tom, jak rychle dodáte podklady, třeba texty, fotografie a logo. Termín domluvíme na začátku.</p></details>
+        <details><summary>Co od vás potřebuji?</summary><p>Stačí popsat, co děláte a co má web přinést. S doménou a hostingem poradím.</p></details>
+        <details><summary>Už web mám. Dá se předělat?</summary><p>Ano. Můžeme ho předělat celý, nebo opravit jen to, co vám nevyhovuje.</p></details>
+        <details><summary>Pomůžete s webem i po spuštění?</summary><p>Ano. Nabízím správu a údržbu: aktualizace, drobné úpravy a technickou podporu.</p></details>
+        <details><summary>Je poptávka závazná?</summary><p>Ne. Poptávkou nic neobjednáváte, jen popíšete, co potřebujete.</p></details>
+      </div>
     </section>
 
     <section id="projekty" class="section">
@@ -350,7 +414,7 @@
       <header class="head">
         <p class="mono">06</p>
         <h2>Kontakt</h2>
-        <p class="intro">Napište, co potřebujete. Ozvu se vám co nejdřív.</p>
+        <p class="intro">Vyberte, co vás zajímá, a napište pár vět. Poptávka je nezávazná, ozvu se vám co nejdřív.</p>
         <a class="mail" href="mailto:davidmraz@webifycz.eu">davidmraz@webifycz.eu</a>
         <p class="mono ico">David Mráz · IČO 29893810</p>
         <p class="social">
@@ -360,6 +424,10 @@
       </header>
       <form id="form" novalidate>
         <p class="trap" aria-hidden="true"><label>Nevyplňovat: <input name="botcheck" tabindex="-1" autocomplete="off"></label></p>
+        <fieldset class="chips">
+          <legend>Co vás zajímá?</legend>
+          <label class="chip"><input type="checkbox" name="service" value="Tvorba webových stránek"><span>Tvorba webu</span></label><label class="chip"><input type="checkbox" name="service" value="Redesign webových stránek"><span>Redesign webu</span></label><label class="chip"><input type="checkbox" name="service" value="SEO optimalizace"><span>SEO</span></label><label class="chip"><input type="checkbox" name="service" value="Správa sociálních sítí"><span>Sociální sítě</span></label><label class="chip"><input type="checkbox" name="service" value="Online reklama"><span>Online reklama</span></label><label class="chip"><input type="checkbox" name="service" value="Správa a údržba webu"><span>Správa webu</span></label>
+        </fieldset>
         <div class="field">
           <label for="name">Jméno</label>
           <input id="name" name="name" type="text" autocomplete="name" required minlength="2">
@@ -371,11 +439,17 @@
           <p class="error" id="email-err" role="alert"></p>
         </div>
         <div class="field wide">
-          <label for="msg">Zpráva</label>
+          <label for="phone">Telefon (nepovinné)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+          <p class="error" id="phone-err" role="alert"></p>
+        </div>
+        <div class="field wide">
+          <label for="msg">Co potřebujete?</label>
           <textarea id="msg" name="msg" rows="5" required minlength="10"></textarea>
           <p class="error" id="msg-err" role="alert"></p>
         </div>
-        <button class="btn" type="submit">Odeslat zprávu →</button>
+        <button class="btn" type="submit">Odeslat poptávku →</button>
+        <p class="note">Odesláním nic neobjednáváte.</p>
         <p class="ok" id="ok" role="status"></p>
       </form>
     </section>
@@ -389,6 +463,8 @@
       <a href="#uvod">Nahoru ↑</a>
     </p>
   </footer>
+
+  <a class="sticky-cta" href="#kontakt">Nezávazná poptávka →</a>
 
   <a class="up" href="#uvod" aria-label="Zpět nahoru">↑</a>
 
