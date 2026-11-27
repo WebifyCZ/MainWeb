@@ -1,0 +1,22 @@
+{
+  "name": "WebifyCz – Tvorba webů a SEO",
+  "short_name": "WebifyCz",
+  "description": "Tvorba a redesign webových stránek, e-shopy, SEO optimalizace a správa sociálních sítí pro malé firmy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#2458e6",
+  "lang": "cs",
+  "icons": [
+    {
+      "src": "/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-       <loc>https://webifycz.eu/</loc>
-       <lastmod>2026-11-27T06:35:16+00:00</lastmod>
-       <priority>1.0000</priority>
+    <loc>https://webifycz.eu/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://webifycz.eu/og-image.png</image:loc>
+      <image:title>WebifyCz – Tvorba webů, SEO a sociální sítě pro malé firmy</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://webifycz.eu/logo.png</image:loc>
+      <image:title>Logo WebifyCz</image:title>
+    </image:image>
   </url>
 </urlset>
